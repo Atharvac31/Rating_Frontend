@@ -1,0 +1,115 @@
+/* admin.css */
+.admin-root {
+  max-width: 1100px;
+  margin: 28px auto;
+  padding: 20px;
+  font-family: Inter, sans-serif;
+}
+
+.admin-title {
+  font-size: 24px;
+  margin-bottom: 16px;
+  font-weight: 700;
+}
+
+.admin-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.admin-card {
+  background: #fff;
+  border: 1px solid #eee;
+  padding: 16px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.admin-card-title {
+  color: #666;
+  font-size: 13px;
+  margin-bottom: 8px;
+}
+
+.admin-card-value {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.admin-error {
+  background: #fee;
+  color: #900;
+  padding: 8px;
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
+
+.admin-list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.admin-input {
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  min-width: 180px;
+}
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 14px;
+}
+
+.admin-table th, .admin-table td {
+  padding: 10px;
+  border-bottom: 1px solid #f3f3f3;
+  text-align: left;
+}
+
+.admin-table th {
+  background: #fafafa;
+}
+
+.link {
+  margin-right: 10px;
+  color: #137fec;
+  text-decoration: none;
+}
+
+.delete {
+  border: none;
+  background: transparent;
+  color: #c53030;
+  cursor: pointer;
+}
+
+.admin-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 12px;
+  max-width: 720px;
+}
+
+.label {
+  font-size: 13px;
+  margin-bottom: 6px;
+}
+
+.btn {
+  background: #137fec;
+  color: white;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+}
+
+.admin-btn {
+  margin-left: 12px;
+}

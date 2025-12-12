@@ -1,0 +1,272 @@
+/* ===========================================================
+   stores.css — refreshed styles for StoreList
+   - Responsive cards
+   - Bigger, aligned stars
+   - Clean search + buttons + pagination
+   =========================================================== */
+
+/* Root container */
+.stores-root {
+  max-width: 980px;
+  margin: 36px auto;
+  padding: 0 20px;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  color: #111;
+  box-sizing: border-box;
+}
+
+/* Header / Search */
+.stores-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 22px;
+}
+
+.stores-header h2 {
+  font-size: 28px;
+  font-weight: 800;
+  margin: 0;
+}
+
+.search-wrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.search-wrap form {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.search-input {
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: 1px solid #e6e8eb;
+  min-width: 300px;
+  background: #fff;
+  box-shadow: 0 1px 0 rgba(16,24,40,0.02);
+  transition: border-color 0.12s ease, box-shadow 0.12s ease;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: rgba(19,127,236,0.9);
+  box-shadow: 0 6px 18px rgba(19,127,236,0.06);
+}
+
+/* Primary button */
+.btn {
+  background: #137fec;
+  color: #fff;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  box-shadow: 0 6px 12px rgba(19,127,236,0.12);
+  transition: transform 0.06s ease, box-shadow 0.12s ease, opacity 0.12s ease;
+}
+
+.btn:hover { transform: translateY(-2px); }
+.btn:active { transform: translateY(0); }
+.btn[disabled] { opacity: 0.6; cursor: not-allowed; transform: none; box-shadow: none; }
+
+/* Error message */
+.error {
+  background: #fff2f2;
+  color: #b42318;
+  padding: 12px 16px;
+  border-radius: 10px;
+  margin-bottom: 14px;
+  border: 1px solid rgba(180,35,24,0.08);
+}
+
+/* Store list layout */
+.stores-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* Each store row */
+.store-row {
+  position: relative;
+}
+
+/* Card */
+.store-card {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  background: #ffffff;
+  border: 1px solid #f0f2f5;
+  padding: 18px;
+  border-radius: 12px;
+  align-items: center;
+  box-shadow: 0 2px 8px rgba(12,16,20,0.03);
+  transition: transform 0.08s ease, box-shadow 0.12s ease;
+}
+
+.store-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(12,16,20,0.06);
+}
+
+/* Left column */
+.store-left {
+  flex: 1;
+  min-width: 0; /* prevents overflow for long text */
+}
+
+.store-name {
+  font-size: 18px;
+  font-weight: 700;
+  margin: 0 0 6px 0;
+  color: #0f1724;
+  line-height: 1.1;
+}
+
+.store-address {
+  margin: 0 0 10px 0;
+  color: #5b6770;
+  font-size: 15px;
+}
+
+/* meta row (avg / ratings count) */
+.meta-row {
+  font-size: 13px;
+  color: #6b7280;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+/* Right column (rating area) */
+.store-right {
+  width: 240px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 6px;
+}
+
+/* Rating label */
+.your-rating .label {
+  font-size: 13px;
+  color: #374151;
+  margin-bottom: 4px;
+  text-align: right;
+}
+
+/* ====================================================
+   Star styles — bigger, interactive, aligned properly
+   ==================================================== */
+.stars {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+}
+
+.star-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 22px;        /* larger star size */
+  line-height: 1;
+  color: #d1d5db;         /* neutral gray */
+  transition: color 0.12s ease, transform 0.08s ease;
+  padding: 4px;
+  border-radius: 6px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: content-box;
+}
+
+.star-btn:hover { transform: translateY(-3px); }
+.star-btn.filled { color: #ffb020; text-shadow: 0 1px 0 rgba(0,0,0,0.04); }
+.star-btn.readonly { cursor: default; transform: none; }
+
+/* small saving indicator */
+.small-loading {
+  font-size: 13px;
+  color: #6b7280;
+  margin-top: 6px;
+}
+
+/* pagination area */
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  align-items: center;
+  margin: 26px 0 48px;
+}
+
+.page-btn {
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: none;
+  background: #137fec;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 8px 18px rgba(19,127,236,0.12);
+  font-weight: 600;
+}
+
+.page-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.page-indicator {
+  font-size: 15px;
+  color: #374151;
+}
+
+/* loading / empty states */
+.loading, .empty {
+  text-align: center;
+  padding: 34px;
+  color: #6b7280;
+  border-radius: 10px;
+}
+
+/* ===========================================================
+   Responsive behavior
+   =========================================================== */
+@media (max-width: 900px) {
+  .stores-root { padding: 0 18px; }
+  .store-right { width: 200px; }
+  .search-input { min-width: 220px; }
+}
+
+@media (max-width: 720px) {
+  .stores-header {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+
+  .search-input { width: 100%; min-width: 0; }
+
+  .store-card {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .store-right {
+    width: 100%;
+    text-align: left;
+    align-items: flex-start;
+    margin-top: 10px;
+  }
+
+  .your-rating .label { text-align: left; }
+}
