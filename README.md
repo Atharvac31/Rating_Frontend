@@ -66,3 +66,51 @@ React Router DOM
 Context API (Authentication)
 
 Custom
+---
+---
+
+## 🔧 Environment Variables
+
+Create a **.env** file in the root of your frontend directory:
+
+VITE_API_BASE_URL=http://localhost:5000/api
+
+Note: Only variables prefixed with VITE_ are exposed and available inside the React application (due to Vite configuration).
+
+---
+
+## 🧑‍💻 Setup Instructions
+
+### 1. Install dependencies
+
+npm install
+
+### 2. Start development server
+
+npm run dev
+
+### 3. Build for production
+
+npm run build
+
+### 4. Preview production build (optional)
+
+npm run preview
+
+---
+
+## 🔌 API Configuration
+
+The api/axiosClient.js file handles base URL configuration and JWT token injection for all requests.
+
+```javascript
+const axiosClient = axios.create({
+  baseURL: import.meta.env.VITE_API_BASE_URL,
+  withCredentials: true,
+});
+
+axiosClient.interceptors.request.use((config) => {
+  const token = localStorage.getItem("token");
+  if (token) config.headers.Authorization = `Bearer ${token}`;
+  return config;
+});
